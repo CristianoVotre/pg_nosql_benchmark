@@ -42,21 +42,21 @@
 DIRECTORY=$(dirname $0)
 BASENAME=$(basename $0)
 
-PGHOME="/usr/ppas-9.3"
-PGHOST="172.17.0.4"
+PGHOME="/etc/postgresql/9.5/main"
+PGHOST="127.0.0.1"
 PGPORT="5432"
 PGUSER="postgres"
 PGPASSWORD="postgres"
 PGDATABASE="benchmark"
 
-PGBIN="/usr/ppas-9.3/bin"
+PGBIN="/usr/lib/postgresql/9.5/bin"
 
 ################################################################################
 # set mongo variables.
 ################################################################################
 MONGO="/usr/bin/mongo"
 MONGOIMPORT="/usr/bin/mongoimport"
-MONGOHOST="172.17.0.3"
+MONGOHOST="127.0.0.1"
 MONGOPORT="27017"
 MONGOUSER="mongo"
 MONGOPASSWORD="mongo"
@@ -78,7 +78,7 @@ source ${DIRECTORY}/lib/mongo_func_lib.sh
 ################################################################################
 # declare require arrays
 ################################################################################
-declare -a json_rows=(10000000)
+declare -a json_rows=(100000)
 
 declare -a pg_size_time
 declare -a pg_copy_time
